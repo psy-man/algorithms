@@ -1,0 +1,37 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon --exec ./node_modules/.bin/ts-node -- ./algorithms/index.ts",
+    "test": "ava-ts -w"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psy-man/algorithms.git"
+  },
+  "author": "Eugene Filipyev <91motivator@gmail.com>",
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "ava": "^0.25.0",
+    "ava-ts": "^0.24.0",
+    "nodemon": "^1.14.12",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.7.1"
+  },
+  "ava": {
+    "files": [
+      "**/**/*.spec.ts"
+    ],
+    "source": [
+      "**/*.ts",
+      "!dist/**/*"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "compileEnhancements": false
+  }
+}
