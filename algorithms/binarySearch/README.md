@@ -1,9 +1,5 @@
-**Fibonacci number**
-
-https://en.wikipedia.org/wiki/Fibonacci_number
+**Binary search**
 
 ```
-fibonacci(0);  // 0
-fibonacci(10); // 55
-fibonacci(50); // 12586269025
+binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1, 0, 11) // 1
 ```
