@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "nodemon --exec ./node_modules/.bin/ts-node -- ./algorithms/index.ts",
-    "test": "ava-ts -w"
+    "test": "ava-ts -w",
+    "cli": "./node_modules/.bin/ts-node ./cli.ts"
   },
   "keywords": [],
   "repository": {
@@ -33,5 +34,8 @@
     "failWithoutAssertions": false,
     "tap": true,
     "compileEnhancements": false
+  },
+  "dependencies": {
+    "commander": "^2.14.1"
   }
 }
