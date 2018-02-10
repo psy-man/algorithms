@@ -1,5 +1,6 @@
 **Filter**
 
+Filters an array
 
 ```
 filter([1, 2, 3, 4], n => n > 2); // [3, 4]
