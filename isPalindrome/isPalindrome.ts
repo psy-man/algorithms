@@ -1,5 +1,6 @@
 import { reverse } from '../reverse/reverse';
 
+
 /**
  * Checks if the string is palindrome
  *
@@ -11,4 +12,3 @@ export function isPalindrome(str: string): boolean {
 
   return string === reverse(string);
 }
-  

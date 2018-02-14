@@ -11,4 +11,3 @@ test(t => t.deepEqual(
   reduce([1, 2, 3, 4, 1, 4, 2, 1], (a, b) => a.add(b), new Set()),
   new Set([1, 2, 3, 4])
 ));
-  

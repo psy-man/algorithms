@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as program from 'commander';
 
+
 const templates = {
   function: `
 export function {{name}}() {
@@ -35,7 +36,7 @@ program
       case 'g':
       case 'generate': {
         const dir = `./${name}`;
-        if (!fs.existsSync(dir)){
+        if (!fs.existsSync(dir)) {
           fs.mkdirSync(dir);
         }
 

@@ -1,6 +1,7 @@
 import test from 'ava';
 import { MyPromise } from './promise';
 
+
 function getPromise(timeout = null) {
   return new MyPromise((res) => {
     if (timeout) {
