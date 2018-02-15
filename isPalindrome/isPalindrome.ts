@@ -8,7 +8,7 @@ import { reverse } from '../reverse/reverse';
  * @returns {boolean}
  */
 export function isPalindrome(str: string): boolean {
-  const string = str.toLowerCase().replace(/ /g, '');
+  const string = str.toLowerCase().replace(/\s/g, '');
 
   return string === reverse(string);
 }
