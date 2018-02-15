@@ -1,33 +1,7 @@
 import * as fs from 'fs';
 import * as program from 'commander';
+import { getGenerator, getMD, getSpec } from './index';
 
-
-const templates = {
-  function: `
-export function {{name}}() {
-  
-}
-  `,
-  class: `
-export class {{name}} {
-  
-}
-  `,
-  spec: `import test from 'ava';
-import { {{name}} } from './{{name}}';
-
-
-// test(t => t.is());
-  `,
-  readme: `**{{name}}**
-
-description
-
-\`\`\`
-code
-\`\`\`
-  `
-};
 
 program
   .arguments('<command> [type] [name]')
@@ -40,34 +14,12 @@ program
           fs.mkdirSync(dir);
         }
 
-        fs.writeFileSync(
-          `${dir}/${name}.ts`,
-          templates[getObjectType(type)].replace(/{{name}}/g, name)
-        );
-
-        fs.writeFileSync(
-          `${dir}/${name}.spec.ts`,
-          templates.spec.replace(/{{name}}/g, name)
-        );
-
-        fs.writeFileSync(
-          `${dir}/README.md`,
-          templates.readme.replace(/{{name}}/g, name)
-        );
-
+        fs.writeFileSync(`${dir}/${name}.ts`, getGenerator(type)(name));
+        fs.writeFileSync(`${dir}/${name}.spec.ts`, getSpec(name));
+        fs.writeFileSync(`${dir}/README.md`, getMD(name));
         break;
       }
     }
   })
   .parse(process.argv);
 
-
-function getObjectType(type) {
-  if (['c', 'class'].includes(type)) {
-    return 'class';
-  }
-
-  if (['f', 'function'].includes(type)) {
-    return 'function';
-  }
-}
