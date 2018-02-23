@@ -1,1 +1,1 @@
-import './linkedList/linkedList';
+import './hashMap/hashMap';
