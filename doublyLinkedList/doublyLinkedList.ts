@@ -1,5 +1,6 @@
 /**
  * Node for Doubly Linked List
+ *
  * @property data - value of node
  * @property prev - link to the previous node or null
  * @property next - link to the next node or null
