@@ -1,8 +1,7 @@
-import test from 'ava';
 import { HashMap } from './hashMap';
 
 
-test(t => {
+it('HashMap', () => {
   const hashMap = new HashMap(1);
 
   hashMap
@@ -10,28 +9,28 @@ test(t => {
     .set('Bartholomew Shoe', '20-09-1970')
     .set('Jonquil Von Haggerston', '12-11-1970');
 
-  t.is(hashMap.count, 3);
-  t.is(hashMap.limit, 4);
+  expect(hashMap.count).toBe(3);
+  expect(hashMap.limit).toBe(4);
 
   hashMap
     .set('Abraham Pigeon', '01-01-1999')
     .set('Abraham Pigeon', '10-10-2010');
 
-  t.is(hashMap.get('Abraham Pigeon'), '10-10-2010');
+  expect(hashMap.get('Abraham Pigeon')).toBe('10-10-2010');
 
-  t.is(hashMap.count, 4);
-  t.is(hashMap.limit, 8);
+  expect(hashMap.count).toBe(4);
+  expect(hashMap.limit).toBe(8);
 
-  t.is(hashMap.delete('Unknown Smith'), false);
-  t.is(hashMap.delete('Bartholomew Shoe'), true);
+  expect(hashMap.delete('Unknown Smith')).toBeFalsy();
+  expect(hashMap.delete('Bartholomew Shoe')).toBeTruthy();
 
-  t.is(hashMap.count, 3);
-  t.is(hashMap.get('Bartholomew Shoe'), undefined);
+  expect(hashMap.count).toBe(3);
+  expect(hashMap.get('Bartholomew Shoe')).toBeUndefined();
 
-  t.is(hashMap.delete('Theodore Handle'), true);
-  t.is(hashMap.delete('Jonquil Von Haggerston'), true);
-  t.is(hashMap.delete('Abraham Pigeon'), true);
+  expect(hashMap.delete('Theodore Handle')).toBeTruthy();
+  expect(hashMap.delete('Jonquil Von Haggerston')).toBeTruthy();
+  expect(hashMap.delete('Abraham Pigeon')).toBeTruthy();
 
-  t.is(hashMap.count, 0);
-  t.is(hashMap.limit, 2);
+  expect(hashMap.count).toBe(0);
+  expect(hashMap.limit).toBe(2);
 });

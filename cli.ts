@@ -14,11 +14,12 @@ export class ${name} {
 }
 `;
 export const getSpec = (name) =>
-  `import test from 'ava';
-import { ${name} } from './${name}';
+  `import { ${name} } from './${name}';
 
 
-// test(t => t.is());
+it('${name}', () => {
+  expect()
+});
 `;
 
 export const getMD = (name) =>

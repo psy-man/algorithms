@@ -1,12 +1,11 @@
-import test from 'ava';
 import { DoublyLinkedList } from './doublyLinkedList';
 
 
-test(t => {
+it('DoublyLinkedList', () => {
   const list = new DoublyLinkedList<number>();
 
-  t.is(list.has(1), false);
-  t.deepEqual(list.traverse(), []);
+  expect(list.has(1)).toBeFalsy();
+  expect(list.traverse()).toEqual([]);
 
   list
     .append(2)
@@ -15,10 +14,10 @@ test(t => {
     .append(4)
     .append(5);
 
-  t.is(list.has(1), true);
-  t.is(list.has(3), true);
-  t.is(list.has(6), false);
+  expect(list.has(1)).toBeTruthy();
+  expect(list.has(3)).toBeTruthy();
+  expect(list.has(6)).toBeFalsy();
 
-  t.deepEqual(list.traverse(), [ 1, 2, 3, 4, 5 ]);
-  t.deepEqual(list.traverse(false), [ 5, 4, 3, 2, 1 ]);
+  expect(list.traverse()).toEqual([1, 2, 3, 4, 5]);
+  expect(list.traverse(false)).toEqual([5, 4, 3, 2, 1]);
 });
