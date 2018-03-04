@@ -13,7 +13,7 @@ function getPromise(timeout = null) {
   })
 }
 
-it('MyPromise', async () => {
+test('MyPromise', async () => {
   expect(await new Promise(resolve => {
     getPromise()
       .then((res) => {

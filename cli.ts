@@ -17,7 +17,7 @@ export const getSpec = (name) =>
   `import { ${name} } from './${name}';
 
 
-it('${name}', () => {
+test('${name}', () => {
   expect()
 });
 `;

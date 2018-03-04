@@ -1,7 +1,7 @@
 import { isBalanced } from './isBalanced';
 
 
-it('isBalanced', () => {
+test('isBalanced', () => {
   expect(isBalanced('{')).toBeFalsy();
   expect(isBalanced('}')).toBeFalsy();
   expect(isBalanced('}{')).toBeFalsy();

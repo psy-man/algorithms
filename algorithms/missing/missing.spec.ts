@@ -1,7 +1,7 @@
 import { missing } from './missing';
 
 
-it('missing', () => {
+test('missing', () => {
   expect(missing([])).toBeUndefined();
   expect(missing([1, 4, 3])).toBe(2);
   expect(missing([2, 3, 4])).toBe(1);

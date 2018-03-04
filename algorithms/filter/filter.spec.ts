@@ -1,7 +1,7 @@
 import { filter } from './filter';
 
 
-it('filter', () => {
+test('filter', () => {
   expect(filter(
     ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'],
     word => word.length > 15

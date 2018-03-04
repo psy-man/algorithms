@@ -1,7 +1,7 @@
 import { isPalindrome } from './isPalindrome';
 
 
-it('isPalindrome', () => {
+test('isPalindrome', () => {
   expect(isPalindrome('')).toBeTruthy();
   expect(isPalindrome('abcdcba')).toBeTruthy();
   expect(isPalindrome('abcd')).toBeFalsy();

@@ -1,7 +1,7 @@
 import { debounce } from './debounce';
 
 
-it('debounce', (done) => {
+test('debounce', (done) => {
   expect.assertions(2);
   let count = 0;
 

@@ -1,7 +1,7 @@
 import { HashMap } from './hashMap';
 
 
-it('HashMap', () => {
+test('HashMap', () => {
   const hashMap = new HashMap(1);
 
   hashMap

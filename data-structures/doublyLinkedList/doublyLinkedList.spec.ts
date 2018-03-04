@@ -1,7 +1,7 @@
 import { DoublyLinkedList } from './doublyLinkedList';
 
 
-it('DoublyLinkedList', () => {
+test('DoublyLinkedList', () => {
   const list = new DoublyLinkedList<number>();
 
   expect(list.has(1)).toBeFalsy();

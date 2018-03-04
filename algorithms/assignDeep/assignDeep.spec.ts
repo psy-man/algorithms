@@ -1,7 +1,7 @@
 import { assignDeep } from './assignDeep';
 
 
-it('assignDeep', () => {
+test('assignDeep', () => {
   expect(assignDeep({a: 1}, {})).toEqual({a: 1});
   expect(assignDeep({a: 1}, {a: 2})).toEqual({a: 2});
   expect(assignDeep({a: 1}, {a: {b: 2}})).toEqual({a: {b: 2}});
