@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "nodemon",
-    "test": "ava-ts -w",
+    "test": "jest",
     "cli": "./node_modules/.bin/ts-node ./cli.ts"
   },
   "keywords": [],
@@ -18,24 +18,22 @@
     "ava": "^0.25.0",
     "ava-ts": "^0.24.0",
     "nodemon": "^1.14.12",
+    "ts-jest": "^22.4.1",
     "ts-node": "^4.1.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "commander": "^2.14.1"
   },
-  "ava": {
-    "files": [
-      "**/**/*.spec.ts"
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
     ],
-    "source": [
-      "**/*.ts",
-      "!dist/**/*"
-    ],
-    "concurrency": 5,
-    "failFast": true,
-    "failWithoutAssertions": false,
-    "tap": true,
-    "compileEnhancements": false
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*\\.spec.ts$"
   },
   "dependencies": {
-    "commander": "^2.14.1"
+    "jest-codemods": "^0.13.9"
   }
 }

@@ -1,1 +1,1 @@
-import './hashMap/hashMap';
+import './data-structures/hashMap/hashMap';
