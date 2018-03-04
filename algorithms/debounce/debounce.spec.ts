@@ -1,17 +1,16 @@
-import test from 'ava';
 import { debounce } from './debounce';
 
 
-test.cb(t => {
-  t.plan(2);
+it('debounce', (done) => {
+  expect.assertions(2);
   let count = 0;
 
   let func = (...args) => {
     count += 1;
 
-    t.is(count, 1);
-    t.deepEqual(args, ['test', 100]);
-    t.end();
+    expect(count).toBe(1);
+    expect(args).toEqual(['test', 100]);
+    done();
   };
 
 

@@ -1,6 +1,8 @@
-import test from 'ava';
 import { flattenDeep } from './flattenDeep';
 
 
-test(t => t.deepEqual(flattenDeep([[1, 2, 3], [4, 5, 6]]), [1, 2, 3, 4, 5, 6]));
-test(t => t.deepEqual(flattenDeep([1, [[2], [3, [4]], 5]]), [1, 2, 3, 4, 5]));
+it('flattenDeep', () => {
+  expect(flattenDeep([[1, 2, 3], [4, 5, 6]])).toEqual([1, 2, 3, 4, 5, 6]);
+  expect(flattenDeep([1, [[2], [3, [4]], 5]])).toEqual([1, 2, 3, 4, 5]);
+});
+

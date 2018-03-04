@@ -1,4 +1,3 @@
-import test from 'ava';
 import { MyPromise } from './promise';
 
 
@@ -14,25 +13,18 @@ function getPromise(timeout = null) {
   })
 }
 
-test(async t => {
-  const res = await new Promise(resolve => {
+it('MyPromise', async () => {
+  expect(await new Promise(resolve => {
     getPromise()
       .then((res) => {
         resolve(res);
       });
-  });
+  })).toBe('test result');
 
-  t.is(res, 'test result');
-});
-
-
-test(async t => {
-  const res = await new Promise(resolve => {
+  expect(await new Promise(resolve => {
     getPromise(1000)
       .then((res) => {
         resolve(res);
       });
-  });
-
-  t.is(res, 'test result');
+  })).toBe('test result');
 });

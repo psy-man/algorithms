@@ -1,9 +1,11 @@
-import test from 'ava';
 import { isPalindrome } from './isPalindrome';
 
 
-test(t => t.is(isPalindrome(''), true));
-test(t => t.is(isPalindrome('abcdcba'), true));
-test(t => t.is(isPalindrome('abcd'), false));
-test(t => t.is(isPalindrome('A man a plan a canal Panama'), true));
-test(t => t.is(isPalindrome(`lo   l`), true));
+it('isPalindrome', () => {
+  expect(isPalindrome('')).toBe(true);
+  expect(isPalindrome('abcdcba')).toBe(true);
+  expect(isPalindrome('abcd')).toBe(false);
+  expect(isPalindrome('A man a plan a canal Panama')).toBe(true);
+  expect(isPalindrome(`lo   l`)).toBe(true);
+});
+

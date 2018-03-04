@@ -1,7 +1,9 @@
-import test from 'ava';
 import { indexOf } from './indexOf';
 
 
-test(t => t.is(indexOf([1, 2, 3], 1), 0));
-test(t => t.is(indexOf([1, 2, 3], 4), -1));
-test(t => t.is(indexOf([1, 2, 3, 4, 5, 1], 1, 3), 5));
+it('indexOf', () => {
+  expect(indexOf([1, 2, 3], 1)).toBe(0);
+  expect(indexOf([1, 2, 3], 4)).toBe(-1);
+  expect(indexOf([1, 2, 3, 4, 5, 1], 1, 3)).toBe(5);
+});
+
