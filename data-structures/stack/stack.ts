@@ -13,7 +13,7 @@ export class Stack<T> {
    *
    * @param {T} element
    */
-  push(element: T) {
+  push(element: T): void {
     this.data[this.top] = element;
     this.top += 1;
   }
