@@ -1,1 +1,1 @@
-import './data-structures/stack/stack';
+import './data-structures/queue/queue';
