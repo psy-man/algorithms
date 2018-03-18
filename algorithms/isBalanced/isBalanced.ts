@@ -1,3 +1,6 @@
+import { Stack } from '../../data-structures/stack/stack';
+
+
 /**
  * Checks if the braces are balanced
  *
@@ -5,7 +8,7 @@
  * @returns {boolean}
  */
 export function isBalanced(str: string): boolean {
-  const stack: string[] = [];
+  const stack = new Stack<string>();
   const braces = {
     '{': '}',
     '(': ')',
@@ -18,7 +21,7 @@ export function isBalanced(str: string): boolean {
     if (isOpen(char)) {
       stack.push(char);
     } else if (isClose(char)) {
-      const last = stack[stack.length - 1];
+      const last = stack.peek();
 
       if (char === braces[last]) {
         stack.pop();
@@ -28,7 +31,7 @@ export function isBalanced(str: string): boolean {
     }
   }
 
-  return stack.length === 0;
+  return stack.isEmpty();
 
   function isOpen(char) {
     return Object.keys(braces).includes(char);
