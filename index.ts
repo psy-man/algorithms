@@ -1,1 +1,1 @@
-import './data-structures/queue/queue';
+import './data-structures/linkedList/linkedList';
