@@ -10,9 +10,8 @@ import { memoize } from '../memoization/memoization';
 export const fibonacci = memoize((num: number): number => {
   switch (num) {
     case 0:
-      return 0;
     case 1:
-      return 1;
+      return num;
     default:
       return fibonacci(num - 2) + fibonacci(num - 1);
   }
