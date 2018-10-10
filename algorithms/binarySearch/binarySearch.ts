@@ -12,8 +12,8 @@ export function binarySearch(array: number[], num: number, left: number, right: 
     return undefined;
   }
 
-  const middle: number = Math.floor((left + right) / 2);
-  const current: number = array[middle];
+  const middle = (left + right) >> 1;
+  const current = array[middle];
 
   if (num === current) {
     return middle
