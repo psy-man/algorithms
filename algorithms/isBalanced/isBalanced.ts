@@ -9,6 +9,7 @@ import { Stack } from '../../data-structures/stack/stack';
  */
 export function isBalanced(str: string): boolean {
   const stack = new Stack<string>();
+
   const braces = {
     '{': '}',
     '(': ')',
