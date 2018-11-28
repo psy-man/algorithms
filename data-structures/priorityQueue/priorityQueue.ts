@@ -143,9 +143,9 @@ export class PriorityQueue<T> {
     return this.heap[idx].priority
   }
 
-  private swap(left: number, rigth: number) {
+  private swap(left: number, right: number) {
     const temp = this.heap[left];
-    this.heap[left] = this.heap[rigth];
-    this.heap[rigth] = temp;
+    this.heap[left] = this.heap[right];
+    this.heap[right] = temp;
   }
 }

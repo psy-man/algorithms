@@ -16,17 +16,13 @@ export function isBalanced(str: string): boolean {
     '[': ']'
   };
 
-  for (let i = 0; i < str.length; i += 1) {
-    const char = str[i];
-
+  for (const char of str) {
     if (isOpen(char)) {
       stack.push(char);
     } else if (isClose(char)) {
-      const last = stack.peek();
+      const last = stack.pop();
 
-      if (char === braces[last]) {
-        stack.pop();
-      } else {
+      if (char !== braces[last]) {
         return false;
       }
     }

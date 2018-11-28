@@ -4,67 +4,85 @@
  *
  * @template T
  */
+import { LinkedList } from '../linkedList/linkedList';
+
+
+/**
+ * Queue
+ * O(1) for all operations
+ */
 export class Queue<T> {
-  private data: T[] = [];
+  private list = new LinkedList<T>();
 
   /**
-   * Add element to the queue
+   * Adds the element to the queue
+   * O(1)
    *
-   * @param {T} element
+   * @param element
    */
-  enqueue(element: T): void {
-    this.data.push(element);
+  push(element: T): void {
+    this.list.append(element);
   }
 
   /**
-   * Gets the first element of the queue
-   *
-   * @returns {T}
+   * Returns the first element of the queue
+   * O(1)
    */
-  front(): T {
-    return this.data[0];
+  top(): T {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    return this.list.getHeadValue();
   }
 
   /**
    * Removes the first element of the queue
-   *
-   * @returns {T | undefined}
+   * O(1)
    */
-  dequeue(): T | undefined {
-    return this.data.shift();
+  pop(): T | null {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.list.getHeadValue();
+    this.list.removeFirst();
+    return value;
   }
 
   /**
    * Returns the last element of the queue
-   *
-   * @returns {T}
+   * O(1)
    */
-  back(): T {
-    return this.data[this.length() - 1];
+  back(): T | null {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    return this.list.getTailValue();
   }
 
   /**
    * Resets the queue
+   * O(1)
    */
   clear(): void {
-    this.data = [];
+    this.list = new LinkedList<T>();
   }
 
   /**
    * Checks if the queue is empty
-   *
-   * @returns {boolean}
+   * O(1)
    */
   isEmpty(): boolean {
-    return this.length() === 0;
+    return this.size() === 0;
   }
 
   /**
    * Returns the size of the queue
-   *
-   * @returns {number}
+   * O(1)
    */
-  length(): number {
-    return this.data.length;
+  size(): number {
+    return this.list.size();
   }
 }
