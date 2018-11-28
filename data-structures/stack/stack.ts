@@ -4,6 +4,7 @@ import { LinkedList } from '../linkedList/linkedList';
 /**
  * Stack
  * follows the LIFO (last in first out) operation
+ * O(1) for all operations
  */
 export class Stack<T> {
   private list = new LinkedList<T>();

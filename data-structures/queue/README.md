@@ -6,11 +6,12 @@
 ```
 const queue = new Queue<number>();
 
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
+queue.push(1);
+queue.push(2);
+queue.push(3);
 
 queue.length(); // 3
 
-queue.dequeue(); // 1
+queue.pop(); // 1
+queue.top(); // 2
 ```

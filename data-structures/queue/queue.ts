@@ -1,14 +1,9 @@
-/**
- * Queue
- * follows the FIFO (first in first out) operation
- *
- * @template T
- */
 import { LinkedList } from '../linkedList/linkedList';
 
 
 /**
  * Queue
+ * follows the FIFO (first in first out) operation
  * O(1) for all operations
  */
 export class Queue<T> {
