@@ -10,6 +10,6 @@ stack.push(2);
 
 stack.pop(); // 2
 
-stack.peek(); // 1
+stack.top(); // 1
 stack.length(); // 1
 ```

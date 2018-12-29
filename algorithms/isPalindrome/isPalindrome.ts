@@ -1,6 +1,3 @@
-import { reverse } from '../reverse/reverse';
-
-
 /**
  * Checks if the string is palindrome
  *
@@ -8,7 +5,13 @@ import { reverse } from '../reverse/reverse';
  * @returns {boolean}
  */
 export function isPalindrome(str: string): boolean {
-  const string = str.toLowerCase().replace(/\s/g, '');
+  const string = str.toLowerCase().replace(/[^\w\d]/g, '');
 
-  return string === reverse(string);
+  for (let i = 0; i < string.length / 2; i += 1) {
+    if (string[i] !== string[string.length - i - 1]) {
+      return false;
+    }
+  }
+
+  return true;
 }

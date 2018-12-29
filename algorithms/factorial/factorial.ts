@@ -1,7 +1,4 @@
-import { memoize } from '../memoization/memoization';
-
-
-export const factorial = memoize((num: number): number => {
+export const factorial = (num: number): number => {
   switch (num) {
     case 0:
     case 1:
@@ -9,4 +6,4 @@ export const factorial = memoize((num: number): number => {
     default:
       return num * factorial(num - 1);
   }
-});
+};

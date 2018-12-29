@@ -1,70 +1,71 @@
+import { LinkedList } from '../linkedList/linkedList';
+
+
 /**
  * Stack
  * follows the LIFO (last in first out) operation
- *
- * @template T
+ * O(1) for all operations
  */
 export class Stack<T> {
-  private data: T[] = [];
-  private top = 0;
+  private list = new LinkedList<T>();
 
   /**
    * Adds element to the stack
+   * O(1)
    *
-   * @param {T} element
+   * @param element
    */
   push(element: T): void {
-    this.data[this.top] = element;
-    this.top += 1;
-  }
-
-  /**
-   * Returns the last element of the stack and decrements pointer to last element
-   * if the stack is empty - undefined
-   *
-   * @returns {T | undefined}
-   */
-  pop(): T | undefined {
-    if (this.isEmpty()) {
-      return undefined;
-    }
-
-    this.top -= 1;
-    return this.data[this.top];
+    this.list.prepend(element);
   }
 
   /**
    * Returns the top element of the stack
-   * if the stack is empty - undefined
-   *
-   * @returns {T | undefined}
+   * O(1)
    */
-  peek(): T | undefined {
-    return this.data[this.top - 1];
+  top(): T {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    return this.list.getHeadValue();
+  }
+
+  /**
+   * Returns and removes the first element of the stack
+   * O(1)
+   */
+  pop(): T | null {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.list.getHeadValue();
+    this.list.removeFirst();
+    return value;
   }
 
   /**
    * Checks if the stack is empty
-   *
-   * @returns {boolean}
+   * O(1)
    */
   isEmpty(): boolean {
-    return this.top === 0;
+    return this.size() === 0;
   }
 
   /**
    * Resets the stack
+   * O(1)
    */
   clear(): void {
-    this.top = 0;
+    this.list = new LinkedList<T>();
   }
 
   /**
    * Returns the size of the stack
-   *
-   * @returns {number}
+   * O(1)
    */
-  length(): number {
-    return this.top;
+  size(): number {
+    return this.list.size();
   }
 }
